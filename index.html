@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amazon Clone</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<header>
+
+<div class="navbar">
+
+<div class="nav-logo">
+<h2>amazon</h2>
+</div>
+
+<div class="location">
+<p>Deliver to</p>
+<h4><i class="fa-solid fa-location-dot"></i> India</h4>
+</div>
+
+<div class="search-bar">
+
+<select id="category">
+<option>All</option>
+<option>Electronics</option>
+<option>Fashion</option>
+<option>Books</option>
+<option>Gaming</option>
+</select>
+
+<input
+type="text"
+id="searchInput"
+placeholder="Search Amazon">
+
+<button>
+<i class="fa-solid fa-magnifying-glass"></i>
+</button>
+
+</div>
+
+<div class="signin">
+<p>Hello, Sign in</p>
+<a href="login.html">Account & Lists</a>
+</div>
+
+<div class="orders">
+<p>Returns</p>
+<h4>& Orders</h4>
+</div>
+
+<div class="cart-icon">
+<a href="cart.html">
+<i class="fa-solid fa-cart-shopping"></i>
+<span id="cart-count">0</span>
+</a>
+</div>
+
+<div class="dark-toggle">
+<button id="darkModeBtn">
+<i class="fa-solid fa-moon"></i>
+</button>
+</div>
+
+</div>
+
+<!-- SECONDARY NAV -->
+
+<div class="menu-bar">
+
+<div class="menu-btn">
+<i class="fa-solid fa-bars"></i> All
+</div>
+
+<ul>
+
+<li>Today's Deals</li>
+<li>Customer Service</li>
+<li>Registry</li>
+<li>Gift Cards</li>
+<li>Sell</li>
+
+</ul>
+
+</div>
+
+</header>
+
+<!-- HERO SLIDER -->
+
+<section class="hero">
+
+<div class="slides fade">
+<img src="https://picsum.photos/1400/450?1">
+</div>
+
+<div class="slides fade">
+<img src="https://picsum.photos/1400/450?2">
+</div>
+
+<div class="slides fade">
+<img src="https://picsum.photos/1400/450?3">
+</div>
+
+</section>
+
+<!-- CATEGORY GRID -->
+
+<section class="categories">
+
+<div class="category-card">
+<img src="https://picsum.photos/300?11">
+<h3>Electronics</h3>
+</div>
+
+<div class="category-card">
+<img src="https://picsum.photos/300?12">
+<h3>Fashion</h3>
+</div>
+
+<div class="category-card">
+<img src="https://picsum.photos/300?13">
+<h3>Home Essentials</h3>
+</div>
+
+<div class="category-card">
+<img src="https://picsum.photos/300?14">
+<h3>Gaming</h3>
+</div>
+
+<div class="category-card">
+<img src="https://picsum.photos/300?15">
+<h3>Beauty</h3>
+</div>
+
+<div class="category-card">
+<img src="https://picsum.photos/300?16">
+<h3>Books</h3>
+</div>
+
+<div class="category-card">
+<img src="https://picsum.photos/300?17">
+<h3>Sports</h3>
+</div>
+
+<div class="category-card">
+<img src="https://picsum.photos/300?18">
+<h3>Mobiles</h3>
+</div>
+
+</section>
+
+<!-- PRODUCTS -->
+
+<section class="product-section">
+
+<h2>Featured Products</h2>
+
+<div class="product-grid" id="productGrid">
+
+<div
+class="product-card"
+data-category="Electronics">
+
+<img src="https://picsum.photos/250?21">
+
+<h3>Laptop</h3>
+
+<p class="price">₹50000</p>
+
+<button
+onclick="addToCart(
+'Laptop',
+50000)">
+Add To Cart
+</button>
+
+</div>
+
+<div
+class="product-card"
+data-category="Electronics">
+
+<img src="https://picsum.photos/250?22">
+
+<h3>Headphones</h3>
+
+<p class="price">₹2500</p>
+
+<button
+onclick="addToCart(
+'Headphones',
+2500)">
+Add To Cart
+</button>
+
+</div>
+
+<div
+class="product-card"
+data-category="Gaming">
+
+<img src="https://picsum.photos/250?23">
+
+<h3>Gaming Mouse</h3>
+
+<p class="price">₹1200</p>
+
+<button
+onclick="addToCart(
+'Gaming Mouse',
+1200)">
+Add To Cart
+</button>
+
+</div>
+
+<div
+class="product-card"
+data-category="Books">
+
+<img src="https://picsum.photos/250?24">
+
+<h3>Programming Book</h3>
+
+<p class="price">₹800</p>
+
+<button
+onclick="addToCart(
+'Programming Book',
+800)">
+Add To Cart
+</button>
+
+</div>
+
+<div
+class="product-card"
+data-category="Fashion">
+
+<img src="https://picsum.photos/250?25">
+
+<h3>T-Shirt</h3>
+
+<p class="price">₹699</p>
+
+<button
+onclick="addToCart(
+'T-Shirt',
+699)">
+Add To Cart
+</button>
+
+</div>
+
+<div
+class="product-card"
+data-category="Fashion">
+
+<img src="https://picsum.photos/250?26">
+
+<h3>Jeans</h3>
+
+<p class="price">₹1499</p>
+
+<button
+onclick="addToCart(
+'Jeans',
+1499)">
+Add To Cart
+</button>
+
+</div>
+
+<div
+class="product-card"
+data-category="Mobiles">
+
+<img src="https://picsum.photos/250?27">
+
+<h3>Smartphone</h3>
+
+<p class="price">₹20000</p>
+
+<button
+onclick="addToCart(
+'Smartphone',
+20000)">
+Add To Cart
+</button>
+
+</div>
+
+<div
+class="product-card"
+data-category="Electronics">
+
+<img src="https://picsum.photos/250?28">
+
+<h3>Smart Watch</h3>
+
+<p class="price">₹3999</p>
+
+<button
+onclick="addToCart(
+'Smart Watch',
+3999)">
+Add To Cart
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="footer-grid">
+
+<div>
+<h4>Get to Know Us</h4>
+<p>About Us</p>
+<p>Careers</p>
+<p>Press Releases</p>
+</div>
+
+<div>
+<h4>Connect With Us</h4>
+<p>Facebook</p>
+<p>Instagram</p>
+<p>Twitter</p>
+</div>
+
+<div>
+<h4>Make Money</h4>
+<p>Sell Products</p>
+<p>Affiliate Program</p>
+<p>Advertise</p>
+</div>
+
+<div>
+<h4>Help</h4>
+<p>Your Account</p>
+<p>Returns Centre</p>
+<p>Support</p>
+</div>
+
+</div>
+
+<div class="copyright">
+© 2026 Amazon Clone Project
+</div>
+
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>

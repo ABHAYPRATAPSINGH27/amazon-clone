@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Shopping Cart</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+
+<div class="navbar">
+
+<div class="nav-logo">
+<a href="index.html" style="text-decoration:none;color:#ff9900;">
+<h2>amazon</h2>
+</a>
+</div>
+
+<div id="userDisplay">
+Hello, Guest
+</div>
+
+<div class="cart-icon">
+<a href="cart.html">
+<i class="fa-solid fa-cart-shopping"></i>
+<span id="cart-count">0</span>
+</a>
+</div>
+
+</div>
+
+</header>
+
+<!-- CART SECTION -->
+
+<div class="cart-container">
+
+<h1>Your Shopping Cart</h1>
+
+<br>
+
+<div id="cartItems">
+<!-- Cart items will be loaded here -->
+</div>
+
+<div class="total-box">
+
+<h2>
+Cart Total:
+<span id="cartTotal">₹0</span>
+</h2>
+
+<br>
+
+<button
+onclick="clearCart()"
+style="
+background:red;
+color:white;
+padding:12px 20px;
+border:none;
+border-radius:5px;
+cursor:pointer;
+margin-right:10px;
+">
+Clear Cart
+</button>
+
+<a href="checkout.html">
+<button
+style="
+background:#ffd814;
+padding:12px 20px;
+border:none;
+border-radius:5px;
+cursor:pointer;
+font-weight:bold;
+">
+Proceed To Checkout
+</button>
+</a>
+
+</div>
+
+<br>
+
+<a href="index.html">
+← Continue Shopping
+</a>
+
+</div>
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="copyright">
+© 2026 Amazon Clone Project
+</div>
+
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>

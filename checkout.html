@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Checkout - Amazon Clone</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+
+<div class="navbar">
+
+<div class="nav-logo">
+<a href="index.html"
+style="text-decoration:none;color:#ff9900;">
+<h2>amazon</h2>
+</a>
+</div>
+
+<div id="userDisplay">
+Hello, Guest
+</div>
+
+<div class="cart-icon">
+<a href="cart.html">
+<i class="fa-solid fa-cart-shopping"></i>
+<span id="cart-count">0</span>
+</a>
+</div>
+
+</div>
+
+</header>
+
+<!-- CHECKOUT SECTION -->
+
+<div class="checkout-container">
+
+<h1>Checkout</h1>
+
+<br>
+
+<h3>Shipping Information</h3>
+
+<input
+type="text"
+id="fullName"
+placeholder="Full Name"
+required>
+
+<input
+type="email"
+id="emailAddress"
+placeholder="Email Address"
+required>
+
+<input
+type="tel"
+id="phoneNumber"
+placeholder="Phone Number"
+required>
+
+<textarea
+id="address"
+rows="4"
+placeholder="Full Delivery Address"
+required>
+</textarea>
+
+<br><br>
+
+<h3>Payment Method</h3>
+
+<label>
+<input
+type="radio"
+name="payment"
+value="Cash on Delivery"
+checked>
+Cash on Delivery
+</label>
+
+<br><br>
+
+<label>
+<input
+type="radio"
+name="payment"
+value="UPI">
+UPI
+</label>
+
+<br><br>
+
+<label>
+<input
+type="radio"
+name="payment"
+value="Credit Card">
+Credit / Debit Card
+</label>
+
+<br><br>
+
+<div class="total-box">
+
+<h2>
+Order Total:
+<span id="checkoutTotal">₹0</span>
+</h2>
+
+</div>
+
+<br>
+
+<button onclick="validateAndPlaceOrder()">
+Place Order
+</button>
+
+<br><br>
+
+<a href="cart.html">
+← Back To Cart
+</a>
+
+</div>
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="copyright">
+© 2026 Amazon Clone Project
+</div>
+
+</footer>
+
+<script src="script.js"></script>
+
+<script>
+
+/* SHOW ORDER TOTAL */
+
+let cart =
+JSON.parse(
+localStorage.getItem("cart")
+) || [];
+
+let total = 0;
+
+cart.forEach(item =>
+{
+    total += item.price;
+});
+
+document.getElementById(
+"checkoutTotal"
+).innerText =
+"₹" + total;
+
+/* VALIDATION */
+
+function validateAndPlaceOrder()
+{
+    let name =
+    document.getElementById(
+    "fullName"
+    ).value;
+
+    let email =
+    document.getElementById(
+    "emailAddress"
+    ).value;
+
+    let phone =
+    document.getElementById(
+    "phoneNumber"
+    ).value;
+
+    let address =
+    document.getElementById(
+    "address"
+    ).value;
+
+    if(
+        name === "" ||
+        email === "" ||
+        phone === "" ||
+        address === ""
+    )
+    {
+        alert(
+        "Please fill all details"
+        );
+        return;
+    }
+
+    alert(
+    "🎉 Order Placed Successfully!"
+    );
+
+    localStorage.removeItem(
+    "cart"
+    );
+
+    window.location.href =
+    "index.html";
+}
+
+</script>
+
+</body>
+</html>

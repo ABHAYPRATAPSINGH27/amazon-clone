@@ -394,3 +394,35 @@ function()
         "Hello, " + user;
     }
 };
+
+function chatbot(){
+
+    let q =
+    document.getElementById("userQuestion")
+    .value.toLowerCase();
+
+    let answer = "";
+
+    if(q.includes("laptop"))
+        answer =
+        "🤖 AI Suggestion: Check our latest laptops.";
+
+    else if(q.includes("mobile"))
+        answer =
+        "🤖 AI Suggestion: Smartphones are currently on sale.";
+
+    else if(q.includes("fashion"))
+        answer =
+        "🤖 AI Suggestion: Trending fashion products are available.";
+
+    else if(q.includes("gaming"))
+        answer =
+        "🤖 AI Suggestion: Explore gaming accessories and consoles.";
+
+    else
+        answer =
+        "🤖 AI Assistant: Please search a product category.";
+
+    document.getElementById("answer")
+    .innerHTML = answer;
+}

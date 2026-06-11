@@ -7,6 +7,7 @@ A responsive Amazon Clone Website built using:
 - JavaScript
 
 Features:
+- AI Shopping Assistant
 - Product Search
 - Product Filter
 - Add To Cart

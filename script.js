@@ -426,3 +426,19 @@ function chatbot(){
     document.getElementById("answer")
     .innerHTML = answer;
 }
+
+function startVoiceSearch(){
+
+const recognition =
+new webkitSpeechRecognition();
+
+recognition.start();
+
+recognition.onresult=function(event){
+
+document.getElementById("searchInput")
+.value=
+event.results[0][0].transcript;
+
+};
+}
